@@ -1,0 +1,72 @@
+<%= form_with(model: job) do |form| %>
+  <% if job.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(job.errors.count, "error") %> prohibited this job from being saved:</h2>
+
+      <ul>
+        <% job.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="row">
+     <div class="col">
+
+   <div class="form-group">
+     <%= form.label :consultation_id, "Consultant Name" %>
+     <%= form.collection_select(:consultation_id, Consultation.all, :id, :full_name, prompt: true) %>
+   </div>
+ <hr />
+
+   <div class="form-group">
+     <%= form.label :client_id, "Client Name"  %>
+     <%= form.collection_select(:client_id, Client.all, :id, :name, prompt: true) %>
+   </div>
+
+   <div class="form-group">
+     <%= form.label :employee_id, "Employee Name" %>
+     <%= form.collection_select(:employee_id, Employee.all, :id, :full_name, prompt: true) %>
+   </div>
+   <div class="field">
+     <%= form.label :location %>
+     <%= form.text_field :location %>
+   </div>
+   <div class="field">
+     <%= form.label :requested_by %>
+     <%= form.text_field :requested_by %>
+   </div>
+
+  <div class="field">
+    <%= form.label :start_time %>
+    <%= form.datetime_select :start_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_time %>
+    <%= form.datetime_select :end_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :work_hours %>
+    <%= form.text_field :work_hours %>
+  </div>
+
+  <div class="field">
+    <%= form.label :total %>
+    <%= form.text_field :total %>
+  </div>
+
+  <div class="field">
+    <%= form.label :notes %>
+    <%= form.text_area :notes %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>
+</div>

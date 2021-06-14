@@ -1,0 +1,29 @@
+h1 {
+
+margin: 1em 0 0.5em 0;
+color: #343434;
+font-weight: normal;
+
+font-size: 36px;
+line-height: 42px;
+text-transform: uppercase;
+text-shadow: 0 2px white, 0 3px #777;
+
+    }
+
+    .card {
+      padding: 1em;
+      width: 250px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      text-align: center;
+        overflow: hidden;
+        color:white!important;
+        background-color: #0074D9!important;
+    }
+
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,52 @@
+<div class="center">
+<h1>Welcome to The <i>Job App</i></h1>
+</div>
+<div class="center">
+
+<% if consultation_signed_in? %>
+   <button class="btn btn-primary type="button" onclick="toggle()">Hide</button>
+</div>
+
+<br />
+<%= current_consultation.id %>
+<div class="center">
+<%= link_to "Clients", new_consultation_client_url(@consultation.id), class: "btn btn-outline-success" %> - <%= link_to "Employees", new_consultation_employee_url(@consultation.id), class: "btn btn-outline-secondary" %>
+</div>
+<br />
+<div class="center">
+
+  <div id="myDIV">
+   <br />
+
+   <div class="card">
+     <p >
+       <h3><%= current_consultation.full_name %></h3>
+       Welcome to the Job app which will help you keep abreast of your projects and assist you in having an overview of, if you are actually making money..
+     </p>
+   </div>
+<% else %>
+
+
+  <br />
+
+  <div class="card">
+    <p >
+      Welcome to the Job app which will help you keep abreast of your projects and assist you in having an overview of if you are making money..
+    </p>
+  </div>
+
+ </div>
+ </div>
+<% end %>
+<script>
+
+    function toggle() {
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+</script>

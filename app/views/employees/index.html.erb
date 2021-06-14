@@ -1,0 +1,36 @@
+<h1 style="color:#2583d7; text-align:center;">Listing employees</h1>
+<hr>
+
+<table class="table table-dark">
+  <tr>
+    <th>Full name</th>
+    <th>ID</th>
+    <th>Contact</th>
+    <th>Email</th>
+    <th>Location</th>
+    <th>Hourly rate</th>
+    <th>Note</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%= employee.full_name %></td>
+    <td><%= employee.nid %></td>
+    <td><%= employee.contact %></td>
+    <td><%= employee.email %></td>
+    <td><%= employee.location %></td>
+    <td><%= employee.hourly_rate %></td>
+    <td><%= employee.note %></td>
+    <td><%= link_to 'Show', [employee.consultation, employee] %></td>
+    <td><%= link_to 'Edit', edit_consultation_employee_path(employee.consultation, employee) %></td>
+    <td><%= link_to 'Destroy', [employee.consultation, employee], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Employee', new_consultation_employee_path(params[:consultation_id]) %>

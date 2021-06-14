@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  consultant: one
+  full_name: MyString
+  nid: MyString
+  contact: MyString
+  email: MyString
+  location: MyString
+  hourly_rate: 9.99
+  note: MyText
+
+two:
+  consultant: two
+  full_name: MyString
+  nid: MyString
+  contact: MyString
+  email: MyString
+  location: MyString
+  hourly_rate: 9.99
+  note: MyText

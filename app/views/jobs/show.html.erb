@@ -1,0 +1,40 @@
+
+
+<p>
+  <strong>Consultant:</strong>
+  <%= @job.consultation.full_name %>
+</p>
+
+<p>
+  <strong>Client:</strong>
+  <%= @job.client.name  %>
+</p>
+
+<p>
+  <strong>Employee:</strong>
+  <%= @job.employee.full_name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @job.start_time %>
+</p>
+
+
+<p>
+  <strong>Work hours:</strong>
+  <%= @job.timetotal %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @job.client.hourly_rate * @job.timetotal.to_i%>
+</p>
+
+<p>
+  <strong>Notes:</strong>
+  <%= @job.notes %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

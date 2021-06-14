@@ -1,0 +1,40 @@
+
+
+<p>
+  <b>Full name:</b>
+  <%= @employee.full_name %>
+</p>
+
+<p>
+  <b>Nid:</b>
+  <%= @employee.nid %>
+</p>
+
+<p>
+  <b>Contact:</b>
+  <%= @employee.contact %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @employee.email %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @employee.location %>
+</p>
+
+<p>
+  <b>Hourly rate:</b>
+  <%= @employee.hourly_rate %>
+</p>
+
+<p>
+  <b>Note:</b>
+  <%= @employee.note %>
+</p>
+
+
+<%= link_to 'Edit', edit_consultation_employee_path(@employee.consultation, @employee) %> |
+<%= link_to 'Back', consultation_employees_path(@employee.consultation) %>
