@@ -4,7 +4,7 @@ class JobsController < ApplicationController
 
   # GET /jobs or /jobs.json
   def index
-    @jobs = Job.all
+    @jobs = Job.includes(:client, :employee)
   end
 
   # GET /jobs/1 or /jobs/1.json

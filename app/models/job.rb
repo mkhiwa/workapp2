@@ -7,4 +7,9 @@ class Job < ApplicationRecord
  def timetotal
   (self.end_time - self.start_time)/3600
  end
+
+ def sumtotal
+  self.client.hourly_rate * self.timetotal.to_i
+ end
+
 end

@@ -16,19 +16,15 @@
 </p>
 
 <p>
-  <strong>Start time:</strong>
-  <%= @job.start_time %>
-</p>
-
-
-<p>
   <strong>Work hours:</strong>
-  <%= @job.timetotal %>
+  <%= @job.timetotal.to_i %>
 </p>
 
 <p>
   <strong>Total:</strong>
-  <%= @job.client.hourly_rate * @job.timetotal.to_i%>
+
+    <%= number_to_currency @job.sumtotal, unit:"E" %>
+
 </p>
 
 <p>

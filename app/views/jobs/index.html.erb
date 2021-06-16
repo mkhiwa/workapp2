@@ -20,13 +20,13 @@
   <tbody>
     <% @jobs.each do |job| %>
       <tr>
-        <td><%= job.consultant_id %></td>
-        <td><%= job.client_id %></td>
-        <td><%= job.employee_id %></td>
-        <td><%= job.start_time %></td>
-        <td><%= job.end_time %></td>
-        <td><%= job.work_hours %></td>
-        <td><%= job.total %></td>
+        <td><%= job.consultation.full_name %></td>
+        <td><%= job.client.name %></td>
+        <td><%= job.employee.full_name %></td>
+        <td><%= job.start_time.strftime("%I:%M%p") %></td>
+        <td><%= job.end_time.strftime("%I:%M%p") %></td>
+        <td><%= job.timetotal.to_i %> hr/s</td>
+        <td><%= number_to_currency job.sumtotal, unit:"E"  %></td>
         <td><%= job.notes %></td>
         <td><%= link_to 'Show', job %></td>
         <td><%= link_to 'Edit', edit_job_path(job) %></td>
